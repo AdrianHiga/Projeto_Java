@@ -301,10 +301,10 @@ public class Menu extends javax.swing.JFrame {
 
                 //Abrir o formulário Menu.java
                 CadastroTreino tela;
-                tela = new CadastroTreino(serie, exercicio1, exercicio2, exercicio3, exercicio4, exercicio5, nome);
+                tela = new CadastroTreino(serie, exercicio1, exercicio2, exercicio3, exercicio4, exercicio5, nome, operacao);
                 tela.setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(null, "Usuário Não cadastrado");
+                JOptionPane.showMessageDialog(null, "Treino não cadastrado");
             }
             //5 - Desconectar.
             conectado.close();
@@ -341,7 +341,7 @@ public class Menu extends javax.swing.JFrame {
                 tela = new TelaUsuario(usuario, senha, nome, cargo, operacao);
                 tela.setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(null, "Usuário Não cadastrado");
+                JOptionPane.showMessageDialog(null, "Usuário não cadastrado");
             }
             //5 - Desconectar.
             conectado.close();

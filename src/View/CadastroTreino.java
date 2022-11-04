@@ -19,9 +19,23 @@ public class CadastroTreino extends javax.swing.JFrame {
 
     }
 
-    public CadastroTreino(String serie, String exercicio1, String exercicio2, String exercicio3, String exercicio4, String exercicio5, String nome) {
+    public CadastroTreino(String serie, String exercicio1, String exercicio2, String exercicio3, String exercicio4, String exercicio5, String nome, String operacao) {
         initComponents();
-    
+        cbxTreino.getSelectedItem().toString();
+        txtEx1.setText(exercicio1);
+        txtEx2.setText(exercicio2);
+        txtEx3.setText(exercicio3);
+        txtEx4.setText(exercicio4);
+        txtEx5.setText(exercicio5);
+        txtNome.setText(nome);
+         if(operacao.equals("excluir")){
+           btnbSalvar.setVisible(false);
+           btnAlteracaoTreino.setVisible(false);
+        } else if(operacao.equals("alterar")){
+            btnbSalvar.setVisible(false);
+           btnExcluir.setVisible(false);   
+            
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -60,7 +74,7 @@ public class CadastroTreino extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnbSalvar);
-        btnbSalvar.setBounds(420, 540, 140, 30);
+        btnbSalvar.setBounds(410, 540, 140, 30);
 
         btnAlteracaoTreino.setText("Salvar Alteração");
         btnAlteracaoTreino.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +83,7 @@ public class CadastroTreino extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnAlteracaoTreino);
-        btnAlteracaoTreino.setBounds(420, 540, 140, 30);
+        btnAlteracaoTreino.setBounds(410, 540, 140, 30);
 
         btnExcluir.setText("Excluir Treino");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -78,13 +92,19 @@ public class CadastroTreino extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnExcluir);
-        btnExcluir.setBounds(420, 540, 140, 30);
+        btnExcluir.setBounds(410, 540, 140, 30);
         getContentPane().add(txtEx3);
         txtEx3.setBounds(320, 330, 320, 30);
         getContentPane().add(txtEx5);
         txtEx5.setBounds(320, 430, 320, 30);
         getContentPane().add(txtEx2);
         txtEx2.setBounds(320, 280, 320, 30);
+
+        txtEx1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEx1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtEx1);
         txtEx1.setBounds(320, 230, 320, 30);
         getContentPane().add(txtNome);
@@ -147,7 +167,7 @@ public class CadastroTreino extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/projeto facul.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 930, 680);
+        jLabel1.setBounds(0, -10, 930, 690);
 
         setSize(new java.awt.Dimension(944, 684));
         setLocationRelativeTo(null);
@@ -325,6 +345,10 @@ public class CadastroTreino extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnAlteracaoTreinoActionPerformed
+
+    private void txtEx1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEx1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEx1ActionPerformed
 
     /**
      * @param args the command line arguments
